@@ -5,9 +5,10 @@
   - [硬體](#硬體)  
   - [系統設定](#系統設定)  
   - [程式語言](#程式語言)  
+  - [開發環境](#開發環境)
   - [可能會使用框架](#可能會使用框架)  
   - [辨識模型](#辨識模型)  
-
+  - [下載整包開發專案](#下載整包開發專案)  
 
 
 硬體  
@@ -161,8 +162,67 @@
 
 開發環境
 ---
-
-
+1. JupyterHub(Use JupyterLab by Default)
+   - 安裝NodeJS & npm
+     - ```console=
+       curl -sL https://deb.nodesource.com/setup_13.x -o nodesource_setup.sh #setup_13.x 按版本所需做調整
+       sudo bash nodesource_setup.sh
+       sudo apt install nodejs npm 
+       ``` 
+   - 安裝configurable-http-proxy
+     - ```console=
+       npm install -g configurable-http-proxy 
+       ```
+   - 安裝Jupyter Lab & Jupyter Hub & SudosPawner
+     - ```console=
+       pip3 install jupyterlab jupyterhub sudospawner
+       ```
+   - 新增專用群組
+     - ```console=
+       sudo groupadd jupyterhub
+       sudo groupadd shadow
+       ``` 
+   - 設定PAM
+     - ```console=
+       sudo chgrp shadow /etc/shadow
+       sudo chmod g+r /etc/shadow
+       sudo usermod -a -G shadow rhea
+       sudo setcap 'cap_net_bind_service=+ep' /usr/bin/node
+       ``` 
+   - 設定 /etc/sudoers
+     - ```console=
+       sudo nano /etc/sudoers
+       ``` 
+     - ```
+       alien           ALL=(ALL:ALL) ALL
+       ivan_yu         ALL=(ALL:ALL) ALL
+       philip_chiang   ALL=(ALL:ALL) ALL
+       Cmnd_Alias JUPYTER_CMD = /usr/local/bin/sudospawner
+       alien ALL=(%jupyterhub) NOPASSWD:JUPYTER_CMD  
+       ```
+   - 產生Jupyter Hub設置檔
+     - ```console=
+       sudo mkdir -p /etc/jupyterhub 
+       cd /etc/jupyterhub
+       sudo chown ${USER}
+       sudo -u ${USER} LD_PRELOAD=/usr/local/jemalloc/lib/libjemalloc.so /usr/local/bin/jupyterhub --generate-config
+       ```
+   - 設定jupyterhub_config.py
+     - ```console=
+       sudo nano jupyterhub_config.py
+       ``` 
+     - ```
+       c.Spawner.default_url = '/lab'
+       c.JupyterHub.ip = '0.0.0.0'
+       c.JupyterHub.spawner_class = 'sudospawner.SudoSpawner'
+       c.JupyterHub.port = 8282
+       c.Authenticator.whitelist =  {'alien','ivan_yu','philip_chiang'}
+       ``` 
+   - 新增用戶
+     - ```console=
+       
+       ```       
+   
 使用框架(是否安裝完畢)
 ---
 - [x] 1. [TensorFlow](https://www.tensorflow.org/api_docs/python/tf_overview) 
@@ -177,7 +237,9 @@
 - [ ] 2. [EfficientNet(神經網絡)](https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet/lite)  
 - [ ] 3. [EfficientDet(物件偵測器)](https://github.com/toandaominh1997/EfficientDet.Pytorch)
 
-
-
+下載整包開發專案
+---
+1. download
+   1 repo 
        
        
