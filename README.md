@@ -157,7 +157,10 @@
 ---
 1. [Python](https://www.python.org/downloads/) 
 2. [Node-js](https://nodejs.org/)
-3. [React Native](https://reactnative.dev/) 
+3. [React Native](https://reactnative.dev/)
+
+開發環境
+---
 
 
 使用框架(是否安裝完畢)
