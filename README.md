@@ -220,8 +220,14 @@
        ``` 
    - 新增用戶
      - ```console=
-       
-       ```       
+       sudo adduser alien
+       sudo usermod -a -G jupyterhub alien
+       sudo reboot
+       ```
+   - 啟動JupyterHub
+     - ```console=
+       sudo -u ${USER} LD_PRELOAD=/usr/local/jemalloc/lib/libjemalloc.so /usr/local/bin/jupyterhub -f /etc/jupyterhub/jupyterhub_config.py
+       ``` 
    
 使用框架(是否安裝完畢)
 ---
