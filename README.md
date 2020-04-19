@@ -246,26 +246,25 @@
 下載整包開發專案
 ---
 1. download  
-    ```console=
-        ssh 下載（需要在github有設定public ssh key才能使用）
-        repo init -u git@github.com:gun123kk/IOT_jetson_nano_manifest.git -b master -q
-        https下載（無設定key也能使用）
-        repo init -u https://github.com/gun123kk/IOT_jetson_nano_manifest.git -b master
-        repo start master --all
-        repo sync -q
-    ```
+   - ```console=
+     ssh 下載（需要在github有設定public ssh key才能使用）
+     repo init -u git@github.com:gun123kk/IOT_jetson_nano_manifest.git -b master -q
+     https下載（無設定key也能使用）
+     repo init -u https://github.com/gun123kk/IOT_jetson_nano_manifest.git -b master
+     repo start master --all
+     repo sync -q
+     ```
     
 2. 若無法使用repo指令  
-    請至[github repoitory 網址](https://github.com/gun123kk/IOT_jetson_nano_manifest)對要得資料夾做git clone
-    
-    - repoitories名單
-    - 1.[IOT_jetson_nano_doc](https://github.com/gun123kk/IOT_jetson_nano_doc)
-    - 2.[IOT_jetson_nano_OS_setting](https://github.com/gun123kk/IOT_jetson_nano_OS_setting)
-    - 3.[IOT_jetson_nano_ReactNative](https://github.com/gun123kk/IOT_jetson_nano_ReactNative)
+請至[github repoitory 網址](https://github.com/gun123kk/IOT_jetson_nano_manifest)對要得資料夾做git clone
+   - repoitories名單
+     - [IOT_jetson_nano_doc](https://github.com/gun123kk/IOT_jetson_nano_doc)
+     - [IOT_jetson_nano_OS_setting](https://github.com/gun123kk/IOT_jetson_nano_OS_setting)
+     - [IOT_jetson_nano_ReactNative](https://github.com/gun123kk/IOT_jetson_nano_ReactNative)
 
 3. 將各自管理的repoitory裡的commit推至github  
-    ```console=
-        git add 修改的檔案
-        git commit
-        git push
-    ```
+   - ```console=
+     git add 修改的檔案
+     git commit
+     git push
+     ```
