@@ -238,8 +238,8 @@
      repo init -u git@github.com:gun123kk/IOT_jetson_nano_manifest.git -b master -q
      https下載（無設定key也能使用）
      repo init -u https://github.com/gun123kk/IOT_jetson_nano_manifest.git -b master
-     repo start master --all
      repo sync -q
+     repo start master --all
      ```
     
 2. 若無法使用repo指令  
@@ -248,6 +248,7 @@
      - [IOT_jetson_nano_doc](https://github.com/gun123kk/IOT_jetson_nano_doc)
      - [IOT_jetson_nano_OS_setting](https://github.com/gun123kk/IOT_jetson_nano_OS_setting)
      - [IOT_jetson_nano_ReactNative](https://github.com/gun123kk/IOT_jetson_nano_ReactNative)
+     - [IOT_jetson_nano_NN](https://github.com/gun123kk/IOT_jetson_nano_NN)
 
 3. 將各自管理的repoitory裡的commit推至github  
    - ```console=
@@ -255,6 +256,12 @@
      git commit
      git push
      ```
+4. 若要在repo上新增repoitory，請修改IOT_jetson_nano_manifest的default.xml文件  
+    - ```console=
+      git add default.xml
+      git commit
+      git push origin HEAD:master
+      ```  
    
 使用框架(是否安裝完畢)
 ---
