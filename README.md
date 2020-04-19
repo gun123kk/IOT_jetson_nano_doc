@@ -6,9 +6,10 @@
   - [系統設定](#系統設定)  
   - [程式語言](#程式語言)  
   - [開發環境](#開發環境)
+  - [下載整包開發專案](#下載整包開發專案)  
   - [可能會使用框架](#可能會使用框架)  
   - [辨識模型](#辨識模型)  
-  - [下載整包開發專案](#下載整包開發專案)  
+ 
 
 
 硬體  
@@ -228,20 +229,6 @@
      - ```console=
        sudo -u ${USER} LD_PRELOAD=/usr/local/jemalloc/lib/libjemalloc.so /usr/local/bin/jupyterhub -f /etc/jupyterhub/jupyterhub_config.py
        ``` 
-   
-使用框架(是否安裝完畢)
----
-- [x] 1. [TensorFlow](https://www.tensorflow.org/api_docs/python/tf_overview) 
-- [ ] 2. [TensorFlow-Lite](https://www.tensorflow.org/api_docs/python/tf/lite)
-- [x] 3. [Pytorch](https://forums.developer.nvidia.com/t/pytorch-for-jetson-nano-version-1-4-0-now-available/72048#5324123)
-- [x] 4. [OpenCV4.1.1(CUDA)](https://www.jetsonhacks.com/2019/11/22/opencv-4-cuda-on-jetson-nano/)
-
-
-辨識模型(是否測試完畢)
----
-- [ ] 1. [Yolo_V3-Tiny](https://pjreddie.com/darknet/yolo/)
-- [ ] 2. [EfficientNet(神經網絡)](https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet/lite)  
-- [ ] 3. [EfficientDet(物件偵測器)](https://github.com/toandaominh1997/EfficientDet.Pytorch)
 
 下載整包開發專案
 ---
@@ -268,3 +255,18 @@
      git commit
      git push
      ```
+   
+使用框架(是否安裝完畢)
+---
+- [x] 1. [TensorFlow](https://www.tensorflow.org/api_docs/python/tf_overview) 
+- [ ] 2. [TensorFlow-Lite](https://www.tensorflow.org/api_docs/python/tf/lite)
+- [x] 3. [Pytorch](https://forums.developer.nvidia.com/t/pytorch-for-jetson-nano-version-1-4-0-now-available/72048#5324123)
+- [x] 4. [OpenCV4.1.1(CUDA)](https://www.jetsonhacks.com/2019/11/22/opencv-4-cuda-on-jetson-nano/)
+
+
+辨識模型(是否測試完畢)
+---
+- [ ] 1. [Yolo_V3-Tiny](https://pjreddie.com/darknet/yolo/)
+- [ ] 2. [EfficientNet(神經網絡)](https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet/lite)  
+- [ ] 3. [EfficientDet(物件偵測器)](https://github.com/toandaominh1997/EfficientDet.Pytorch)
+
