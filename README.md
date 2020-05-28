@@ -9,6 +9,7 @@
   - [下載整包開發專案](#下載整包開發專案)  
   - [可能會使用框架](#可能會使用框架)  
   - [辨識模型](#辨識模型)  
+  - [轉送端(測試)](#轉送端(測試))
  
 
 
@@ -232,7 +233,7 @@
 
 下載整包開發專案
 ---
-1. download  
+1. Download  
    - ```console=
      ssh 下載（需要在github有設定public ssh key才能使用）
      repo init -u git@github.com:gun123kk/IOT_jetson_nano_manifest.git -b master -q
@@ -243,7 +244,7 @@
      ```
     
 2. 若無法使用repo指令  
-請至[github repoitory 網址](https://github.com/gun123kk/IOT_jetson_nano_manifest)對要得資料夾做git clone
+   - 請至[github repoitory 網址](https://github.com/gun123kk/IOT_jetson_nano_manifest)對要得資料夾做git clone
    - repoitories名單
      - [IOT_jetson_nano_doc](https://github.com/gun123kk/IOT_jetson_nano_doc)
      - [IOT_jetson_nano_OS_setting](https://github.com/gun123kk/IOT_jetson_nano_OS_setting)
@@ -261,19 +262,41 @@
       git add default.xml
       git commit
       git push origin HEAD:master
-      ```  
-   
+      ``` 
+      
+轉送端(測試)
+---
+- Pub/Sub:
+  - 測試主機：140.109.22.214:8282(2 GPU Host)
+    - 測試檔案路徑：/home/alien/public/ivan_yu/pub_sub_example
+  - 環境：Mqtt(Apache ActiveMQ)
+    - 測試Lang： Python3.8
+    - 測試IDE：Jupyterlab
+    - 操作：照片reSize --> 照片轉Bytes
+    - 狀態:Pub of Json (Ok! 但需要 reSize),Sub(無法動作) 
+  - 環境：Redis(Version 6)
+    - 測試Lang： Python3.8
+    - 測試IDE：Jupyterlab
+    - 操作：照片轉Bytes -->在轉Base64
+    - 狀態：Pub/Sub 都正常
+- Streaming:
+  - 測試主機：140.109.22.214:8282(2 GPU Host) & Jetson nano 
+    - 環境：Redis(Version 6)
+    - 測試Lang： Python3.8
+    - 測試IDE：Jupyterlab
+    - 操作：照片轉Bytes --> Join Json Format --> xADD(傳送) --> xREVRANGE(接收) --> Bytes轉照片
+     
 使用框架(是否安裝完畢)
 ---
 - [x] 1. [TensorFlow](https://www.tensorflow.org/api_docs/python/tf_overview) 
-- [ ] 2. [TensorFlow-Lite](https://www.tensorflow.org/api_docs/python/tf/lite)
+- [x] 2. [TensorFlow-Lite](https://www.tensorflow.org/api_docs/python/tf/lite)
 - [x] 3. [Pytorch](https://forums.developer.nvidia.com/t/pytorch-for-jetson-nano-version-1-4-0-now-available/72048#5324123)
 - [x] 4. [OpenCV4.1.1(CUDA)](https://www.jetsonhacks.com/2019/11/22/opencv-4-cuda-on-jetson-nano/)
 
 
 辨識模型(是否測試完畢)
 ---
-- [ ] 1. [Yolo_V3-Tiny](https://pjreddie.com/darknet/yolo/)
-- [ ] 2. [EfficientNet(神經網絡)](https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet/lite)  
-- [ ] 3. [EfficientDet(物件偵測器)](https://github.com/toandaominh1997/EfficientDet.Pytorch)
+- [x] 1. [Yolo_V3-Tiny](https://pjreddie.com/darknet/yolo/) 不採納
+- [x] 2. [EfficientNet(神經網絡)]不採納(https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet/lite)  
+- [x] 3. [EfficientDet(物件偵測器)]不採納(https://github.com/toandaominh1997/EfficientDet.Pytorch)
 
