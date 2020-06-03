@@ -4,12 +4,13 @@
 * [Jetson Nano](#Jetson-Nano)  
   - [硬體](#硬體)  
   - [系統設定](#系統設定)  
+  - [系統架構](#系統架構)  
   - [程式語言](#程式語言)  
-  - [開發環境](#開發環境)
+  - [開發環境](#開發環境)  
   - [下載整包開發專案](#下載整包開發專案)  
   - [可能會使用框架](#可能會使用框架)  
   - [辨識模型](#辨識模型)  
-  - [轉送端(測試)](#轉送端(測試))
+  - [轉送端(測試)](#轉送端(測試))  
  
 
 
@@ -155,6 +156,16 @@
 - Jemalloc 確保記憶體有效利用,現在裝的版本5.2.1(目前最新)，可在這找到更新或更舊的版本 https://github.com/jemalloc/jemalloc/releases  
 :::  
 
+架構
+---
+- 整體架構
+
+![](https://github.com/gun123kk/IOT_jetson_nano_doc/blob/master/png/Pic1.png?raw=true)
+
+- 辨識架構
+
+
+
 
 程式語言
 ---
@@ -238,7 +249,7 @@
      ssh 下載（需要在github有設定public ssh key才能使用）
      repo init -u git@github.com:gun123kk/IOT_jetson_nano_manifest.git -b master -q
      https下載（無設定key也能使用）
-     repo init -u https://github.com/gun123kk/IOT_jetson_nano_manifest.git -b master
+     repo init -u https://github.com/gun123kk/IOT_jetson_nano_manifest.git -b master
      repo sync -q
      repo start master --all
      ```
@@ -250,6 +261,8 @@
      - [IOT_jetson_nano_OS_setting](https://github.com/gun123kk/IOT_jetson_nano_OS_setting)
      - [IOT_jetson_nano_ReactNative](https://github.com/gun123kk/IOT_jetson_nano_ReactNative)
      - [IOT_jetson_nano_NN](https://github.com/gun123kk/IOT_jetson_nano_NN)
+     - [IOT_jetson_nano_redis](https://github.com/gun123kk/IOT_jetson_nano_redis)
+     - [IOT_jetson_nano_test](https://github.com/gun123kk/IOT_jetson_nano_test)
 
 3. 將各自管理的repoitory裡的commit推至github  
    - ```console=
@@ -285,6 +298,9 @@
     - 測試Lang： Python3.8
     - 測試IDE：Jupyterlab
     - 操作：照片轉Bytes --> Join Json Format --> xADD(傳送) --> xREVRANGE(接收) --> Bytes轉照片
+
+
+
      
 使用框架(是否安裝完畢)
 ---
