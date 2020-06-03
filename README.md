@@ -163,8 +163,8 @@
 ![](https://github.com/gun123kk/IOT_jetson_nano_doc/blob/master/png/Pic1.png?raw=true)
 
 - 辨識架構
-- 
-![](https://github.com/gun123kk/IOT_jetson_nano_doc/blob/master/png/Pic2.png)
+
+![](https://github.com/gun123kk/IOT_jetson_nano_doc/blob/master/png/Pic2.png?raw=true)
 
 
 
